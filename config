@@ -97,8 +97,8 @@ set $wksp2 "2: FireFox "
 set $wksp3 "3: Terminals "
 set $wksp4 "4: Editor "
 set $wksp5 "5: Doc "
-set $wksp6 "6: Mail "
-set $wksp7 "7:"
+set $wksp6 "6:"
+set $wksp7 "7: Mail "
 set $wksp8 "8: Files "
 set $wksp9 "9: Telegram "
 set $wksp10 "10: Spotify "
@@ -135,7 +135,7 @@ assign [class="Gedit"] $wksp4
 assign [class="Atom"] $wksp4
 assign [class="TelegramDesktop"] $wksp9
 assign [class="Spotify"] $wksp10
-assign [class="Mailspring"] $wksp6
+assign [class="Mailspring"] $wksp7
 assign [class="Thunar"] $wksp8
 
 # reload the configuration file
@@ -212,22 +212,31 @@ bar {
 bindsym $mod+shift+x exec ~/.config/i3/i3lock-skvirani.sh
 #exec ~/.config/i3/i3autolock-skvirani.sh
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sinkI-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sinkI-volume 0 +5% #increase sound volume
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+#bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+#bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Touchpad controls
-bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
+#bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+# Screen brightness controls
+#bindsym $mod+F3 exec xbacklight -inc 10 # increase screen brightness
+#bindsym $mod+F2 exec xbacklight -dec 10 # decrease screen brightness
+# Pulse Audio controls
+#bindsym $mod+F8 exec pactl --no-startup-id set-sink-volume 1 +5% #increase sound volume
+#bindsym $mod+F7 exec pactl --no-startup-id set-sink-volume 1 -- -5% #decrease sound volume
+#bindsym $mod+F6 exec pactl set-sink-mute 1 toggle # mute sound
+
 
 #natural scrolling
 exec_always --no-startup-id synclient NaturalScrolling=1 VertScrollDelta=-113
@@ -244,14 +253,14 @@ exec synclient TapButton1=0 TapButton2=0 TapButton3=0
 exec telegram
 
 #Mailspring
-exec mailspring
+#exec mailspring
 
 #Ranger/Thunar
-exec gnome-terminal
+#exec gnome-terminal
 exec thunar
 
 #Wallpaper
-exec_always feh --bg-scale /home/skvirani/Pictures/wallpaper.jpg
+exec_always feh --bg-scale /home/skvirani/Pictures/HeuanqL.jpg
 
 #Rofi
 bindsym $mod+space exec rofi -show run -lines 3 -eh 2 -width 100 -padding 450 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
