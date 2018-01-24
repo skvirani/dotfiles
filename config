@@ -177,14 +177,15 @@ set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
-set $active-bg-color     #9575cd
+set $active-bg-color     #ce1c5e
+set $purple-colors       #9575cd
 
 # window colors
 #                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color   $text-color          #9575cd
-client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #9575cd
-client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #9575cd
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #9575cd
+client.focused          $bg-color           $bg-color          $text-color          #ce1c5e
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #ce1c5e
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #ce1c5e
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #ce1c5e
 
 hide_edge_borders vertical
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -218,8 +219,8 @@ bindsym $mod+shift+x exec ~/.config/i3/i3lock-skvirani.sh
 #bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
-#bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-#bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+#bindsym $mod+i exec xbacklight -inc 20 # increase screen brightness
+bindsym $mod+i exec xbacklight -dec 20 # decrease screen brightness
 
 # Touchpad controls
 #bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
@@ -231,12 +232,12 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Screen brightness controls
-#bindsym $mod+F3 exec xbacklight -inc 10 # increase screen brightness
-#bindsym $mod+F2 exec xbacklight -dec 10 # decrease screen brightness
+#bindcode 233 exec xbacklight -inc 10 # increase screen brightness
+#bindcode 232 exec xbacklight -dec 10 # decrease screen brightness
 # Pulse Audio controls
-#bindsym $mod+F8 exec pactl --no-startup-id set-sink-volume 1 +5% #increase sound volume
-#bindsym $mod+F7 exec pactl --no-startup-id set-sink-volume 1 -- -5% #decrease sound volume
-#bindsym $mod+F6 exec pactl set-sink-mute 1 toggle # mute sound
+bindcode 123 exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindcode 122 exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindcode 121 exec pactl set-sink-mute 0 toggle # mute sound
 
 
 #natural scrolling
@@ -261,9 +262,11 @@ exec telegram
 exec thunar
 
 #Wallpaper
-exec_always feh --bg-scale /home/skvirani/Pictures/HeuanqL.jpg
+exec_always feh --bg-scale /home/skvirani/Pictures/RedMountain.jpg
 
 #Rofi
-bindsym $mod+space exec rofi -show run -lines 3 -eh 2 -width 100 -padding 450 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
-
+bindsym $mod+space exec rofi -show run -lines 3 -eh 2 -width 100 -padding 450 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#ce1c5e" -font "System San Francisco Display 18"
+#9575cd
 exec_always compton
+
+exec_always xrandr --output HDMI-2 --off --output HDMI-1 --off --output DP-1 --off --output eDP-1 --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-2 --primary --mode 1920x1080 --pos 0x0 --rotate normal
