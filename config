@@ -100,7 +100,7 @@ set $wksp5 "5: Doc "
 set $wksp6 "6:"
 set $wksp7 "7: Mail "
 set $wksp8 "8: Files "
-set $wksp9 "9: Telegram "
+set $wksp9 "9: Messeging "
 set $wksp10 "10: Spotify "
 
 # switch to workspace
@@ -137,6 +137,7 @@ assign [class="TelegramDesktop"] $wksp9
 assign [class="Spotify"] $wksp10
 assign [class="Mailspring"] $wksp7
 assign [class="Thunar"] $wksp8
+assign [class="Slack"] $wksp9
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
