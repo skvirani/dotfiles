@@ -53,6 +53,8 @@ URxvt.depth: 24
 URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
 URxvt.perl-ext-common: default,matcher,vtwheel
+URxvt.underlineURLs: true
+URxvt.dynamicColors: on
 
 URxvt*transparent: true
 URxvt*shading: 35
