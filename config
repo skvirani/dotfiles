@@ -134,10 +134,10 @@ assign [class="Firefox"] $wksp2
 assign [class="Gedit"] $wksp4
 assign [class="Atom"] $wksp4
 assign [class="TelegramDesktop"] $wksp9
-assign [class="Spotify"] $wksp10
-assign [class="Mailspring"] $wksp7
+#assign [class="Spotify"] $wksp10
+#assign [class="Mailspring"] $wksp7
 assign [class="Thunar"] $wksp8
-assign [class="Slack"] $wksp9
+#assign [class="Slack"] $wksp9
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -254,7 +254,7 @@ exec synclient TapButton1=0 TapButton2=0 TapButton3=0
 #gaps outer 10
 
 #Telegram
-exec telegram
+#exec telegram
 
 #Mailspring
 #exec mailspring
@@ -267,7 +267,8 @@ exec thunar
 exec_always feh --bg-scale /home/skvirani/Pictures/RedMountain.jpg
 
 #Rofi
-bindsym $mod+space exec rofi -show run -lines 3 -eh 2 -width 100 -padding 450 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#ce1c5e" -font "System San Francisco Display 18"
+bindsym $mod+space exec rofi -show run
+#-lines 3 -eh 2 -width 100 -padding 450 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#ce1c5e" -font "System San Francisco Display 18"
 #9575cd
 exec_always compton
 
