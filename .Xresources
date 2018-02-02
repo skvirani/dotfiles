@@ -58,3 +58,14 @@ URxvt.dynamicColors: on
 
 URxvt*transparent: true
 URxvt*shading: 35
+
+!rofi settings
+rofi.color-window: #2f343f, #f3f4f5, #ce1c5e
+rofi.color-normal: #2f343f, #f3f4f5, #2f343f, #ce1c5e, #2f343f
+rofi.color-active: #ce1c5e, #ce1c5e, #ce1c5e, #2f343f, #ce1c5e
+rofi.color-urgent: #f3f4f5, #f3f4f5, #f3f4f5, #f3f4f5, #f3f4f5
+rofi.lines: 3
+rofi.eh: 2
+rofi.width: 100
+rofi.padding: 450
+rofi.font: System San Francisco Display 18
