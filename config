@@ -134,10 +134,15 @@ assign [class="Firefox"] $wksp2
 assign [class="Gedit"] $wksp4
 assign [class="Atom"] $wksp4
 assign [class="TelegramDesktop"] $wksp9
-#assign [class="Spotify"] $wksp10
-#assign [class="Mailspring"] $wksp7
+assign [class="Spotify"] $wksp10
+assign [class="Mailspring"] $wksp7
 assign [class="Thunar"] $wksp8
-#assign [class="Slack"] $wksp9
+assign [class="Slack"] $wksp9
+assign [class="discord"] $wksp9
+assign [class="jetbrains-idea"] $wksp4
+assign [class="jetbrains-pycharm"] $wksp4
+assign [class="jetbrains-clion"] $wksp4
+assign [class="Evince"] $wksp5
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -222,16 +227,16 @@ bindsym $mod+shift+x exec ~/.config/i3/i3lock-skvirani.sh
 
 # Sreen brightness controls
 #bindsym $mod+i exec xbacklight -inc 20 # increase screen brightness
-bindsym $mod+i exec xbacklight -dec 20 # decrease screen brightness
+#bindsym $mod+i exec xbacklight -dec 20 # decrease screen brightness
 
 # Touchpad controls
 #bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
 # Media player controls
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+#bindsym XF86AudioPlay exec playerctl play
+#bindsym XF86AudioPause exec playerctl pause
+#bindsym XF86AudioNext exec playerctl next
+#bindsym XF86AudioPrev exec playerctl previous
 
 # Screen brightness controls
 #bindcode 233 exec xbacklight -inc 10 # increase screen brightness
@@ -243,7 +248,7 @@ bindcode 121 exec pactl set-sink-mute 0 toggle # mute sound
 
 
 #natural scrolling
-exec_always --no-startup-id synclient NaturalScrolling=1 VertScrollDelta=-113
+#exec_always --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelta=-111
 
 #tap to click disable
 exec synclient TapButton1=0 TapButton2=0 TapButton3=0
@@ -267,8 +272,7 @@ exec thunar
 exec_always feh --bg-scale /home/skvirani/Pictures/RedMountain.jpg
 
 #Rofi
-bindsym $mod+space exec rofi -show run
-#-lines 3 -eh 2 -width 100 -padding 450 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#ce1c5e" -font "System San Francisco Display 18"
+bindsym $mod+space exec --no-startup-id rofi -show run -lines 3 -eh 2 -width 100 -padding 450 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#ce1c5e" -font "System San Francisco Display 18"
 #9575cd
 exec_always compton
 
